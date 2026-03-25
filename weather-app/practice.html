@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="sample-text">The latitude of England is: </p>
+</body>
+
+<script>
+    async function getLocation() {
+        try {
+            let londonData = await fetch('https://geocoding-api.open-meteo.com/v1/search?name=London&count=1')
+            let ld = await londonData.json()
+            console.log(ld)
+            console.log(ld.results[0].latitude)
+
+            const latitude = ld.results[0].latitude
+            document.getElementById('sample-text').textContent = "The latitude of England is: " + latitude
+        } catch(error) {
+            console.log(error)
+        }
+    } 
+
+    getLocation();
+</script>
+
+</html>
