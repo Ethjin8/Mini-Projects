@@ -16,6 +16,9 @@
                 <input type="text" id="search-bar" placeholder="Enter city name" spellcheck="false">
                 <button id="search-button"><img src="images/search.png"></button>
             </div>
+            <div class="error">
+                <p>Invalid City Name!</p>
+            </div>
         </div>
         <div class="weather">
             <img id="weather-icon" src="images/clouds.png" class="weather-icon">
@@ -93,9 +96,11 @@
                 document.getElementById("weather-icon").src = "images/thunder.png";
             }
 
-            document.querySelector(".weather").style.display = "flex"
+            document.querySelector(".weather").style.display = "flex";
+            document.querySelector(".error").style.display = "none";
         } catch (error) {
-            console.log(error)
+            document.querySelector(".error").style.display = "block";
+            console.log(error);
         }
     }
 </script>

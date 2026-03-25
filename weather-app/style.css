@@ -62,6 +62,15 @@ body {
     width: 20px;
 }
 
+.error {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+    color: #eb3b3b; /* Light red for visibility on dark background */
+}
+
 .weather {
     background: linear-gradient(135deg, #00feba, #5b548a);
     margin-top: 40px;
