@@ -65,35 +65,35 @@
             const data = await getWeatherData(location)
             document.querySelector(".location").textContent = data.location
             document.querySelector(".temperature").textContent = data.temperature + "°C"
-            document.getElementById("humidity-percentage").textContent = data.humidity + "%"
-            document.getElementById("wind-speed").textContent = data.wind_speed + " km/hr"
+            document.querySelector("#humidity-percentage").textContent = data.humidity + "%"
+            document.querySelector("#wind-speed").textContent = data.wind_speed + " km/hr"
 
             if (data.weather_code == 0 || data.weather_code == 1) {
-                document.getElementById("weather-icon").src = "images/clear.png"
+                document.querySelector("#weather-icon").src = "images/clear.png"
             }
             else if (data.weather_code == 2 || data.weather_code == 3) {
-                document.getElementById("weather-icon").src = "images/clouds.png"
+                document.querySelector("#weather-icon").src = "images/clouds.png"
             }
             else if (data.weather_code == 45 || data.weather_code == 48) {
-                document.getElementById("weather-icon").src = "images/mist.png"
+                document.querySelector("#weather-icon").src = "images/mist.png"
             }
             else if (data.weather_code >= 51 && data.weather_code <= 57) {
-                document.getElementById("weather-icon").src = "images/drizzle.png"
+                document.querySelector("#weather-icon").src = "images/drizzle.png"
             }
             else if (data.weather_code >= 61 && data.weather_code <= 67) {
-                document.getElementById("weather-icon").src = "images/rain.png"
+                document.querySelector("#weather-icon").src = "images/rain.png"
             }
             else if (data.weather_code >= 71 && data.weather_code <= 77) {
-                document.getElementById("weather-icon").src = "images/snow.png"
+                document.querySelector("#weather-icon").src = "images/snow.png"
             }
             else if (data.weather_code >= 80 && data.weather_code <= 82) {
-                document.getElementById("weather-icon").src = "images/rain.png"
+                document.querySelector("#weather-icon").src = "images/rain.png"
             }
             else if (data.weather_code == 85 || data.weather_code <= 86) {
-                document.getElementById("weather-icon").src = "images/snow.png"
+                document.querySelector("#weather-icon").src = "images/snow.png"
             }
             else {
-                document.getElementById("weather-icon").src = "images/thunder.png";
+                document.querySelector("#weather-icon").src = "images/thunder.png";
             }
 
             document.querySelector(".weather").style.display = "flex";
